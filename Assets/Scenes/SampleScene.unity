@@ -207,7 +207,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 239314286}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -7, y: 4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -326,7 +326,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   table: {fileID: 1875359090065008756, guid: fca923ce2796eaa46ab353987e31e42e, type: 3}
-  tables: []
+  zenzai: {fileID: 4395656013431253883, guid: 94d466870864abd468bde3bcbe3c7ad0, type: 3}
   tableDistX: 1.6
   tableDistY: -2.4
   tableNumX: 7

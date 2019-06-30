@@ -38,5 +38,14 @@ public class OkuniController : MonoBehaviour
             move -= new Vector3(0,tableManager.tableDistY);
         }
         transform.position += move;
+        if(Input.GetKeyDown(KeyCode.Z)){
+            if(tableManager.tableStates[y][x]==TableManager.TableState.Empty){
+                tableManager.tableStates[y][x] = TableManager.TableState.Zenzai;
+                tableManager.zenzais[y][x].SetActive(true);
+            }else if(tableManager.tableStates[y][x]==TableManager.TableState.Zenzai){
+                tableManager.tableStates[y][x] = TableManager.TableState.Empty;
+                tableManager.zenzais[y][x].SetActive(false);
+            }
+        }
     }
 }
