@@ -17,7 +17,7 @@ public class OkuniController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        transform.position = new Vector3(tableManager.firstTableVec.x,tableManager.firstTableVec.y);
+        transform.position = new Vector3(tableManager.firstTableVec.x,tableManager.firstTableVec.y,-2);
     }
 
     // Update is called once per frame
