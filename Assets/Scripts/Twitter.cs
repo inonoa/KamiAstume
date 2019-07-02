@@ -14,7 +14,10 @@ public class Twitter : MonoBehaviour
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.T)){
-            naichilab.UnityRoomTweet.Tweet ("kamiatsume", "テスト", "unityroom");
+            //naichilab.UnityRoomTweet.Tweet ("kamiatsume", "テスト", "unityroom");
+
+            // Type == Number の場合
+            naichilab.RankingLoader.Instance.SendScoreAndShowRanking (101);
         }
     }
 }
