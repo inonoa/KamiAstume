@@ -39,12 +39,11 @@ public class OkuniController : MonoBehaviour
         }
         transform.position += move;
         if(Input.GetKeyDown(KeyCode.Z)){
-            if(tableManager.tableStates[y][x]==TableManager.TableState.Empty){
-                tableManager.tableStates[y][x] = TableManager.TableState.Zenzai;
-                tableManager.zenzais[y][x].SetActive(true);
-            }else if(tableManager.tableStates[y][x]==TableManager.TableState.Zenzai){
-                tableManager.tableStates[y][x] = TableManager.TableState.Empty;
-                tableManager.zenzais[y][x].SetActive(false);
+            Debug.Log(tableManager.tableStates[y][x].KamiState);
+            if(tableManager.tableStates[y][x].KamiState==Table.KState.lackingOfZenzai){
+                tableManager.tableStates[y][x].TryToPutZenzai();
+            }else if(tableManager.tableStates[y][x].KamiState==Table.KState.Ate){
+                tableManager.tableStates[y][x].TryToRemoveZenzai();
             }
         }
     }
