@@ -9,7 +9,15 @@ public class TableManager : MonoBehaviour
     }
     public GameObject table;
     public GameObject zenzai;
-    public List<GameObject> kamis;
+
+    //神の候補全部乗せ(ある時点で出るのはこの中の限定された範囲内)
+    public GameObject[] kamis;
+
+    ///kamiSoejiL番目以上kamiSoejiR番目以下の神が出る
+    private int kamiSoejiL = 0;
+    private int kamiSoejiR = 8000000;
+
+
     public List<List<GameObject>> tables = new List<List<GameObject>>();
     public List<List<TableState>> tableStates = new List<List<TableState>>();
     public List<List<GameObject>> zenzais = new List<List<GameObject>>();
@@ -17,13 +25,14 @@ public class TableManager : MonoBehaviour
     public float tableDistX = 1.6f;
     public float tableDistY = -2.4f;
     public int tableNumX = 7;
-    public int tableNumY = 2;
+    public int tableNumY = 3;
     public Vector3 firstTableVec = new Vector3(-4.8f,2,1); // 書き換わってくれ
     public Vector3 firstZenzaiVec;
 
     // Start is called before the first frame update
     void Start()
     {
+        zenzai = table.transform.Find( "Zenzai" ).gameObject;
         firstZenzaiVec = firstTableVec + new Vector3(0,0,-1);
         //テーブル生成
         for(int j=0;j<tableNumY;j++){
