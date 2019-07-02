@@ -9,6 +9,7 @@ public class TableManager : MonoBehaviour
     }
     public GameObject table;
     public GameObject zenzai;
+    public List<GameObject> kamis;
     public List<List<GameObject>> tables = new List<List<GameObject>>();
     public List<List<TableState>> tableStates = new List<List<TableState>>();
     public List<List<GameObject>> zenzais = new List<List<GameObject>>();

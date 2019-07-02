@@ -664,6 +664,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   table: {fileID: 1875359090065008756, guid: fca923ce2796eaa46ab353987e31e42e, type: 3}
   zenzai: {fileID: 4395656013431253883, guid: 94d466870864abd468bde3bcbe3c7ad0, type: 3}
+  kamis:
+  - {fileID: 4564526777661604400, guid: 5109316939ad58d42987a4c0a2f0597d, type: 3}
+  - {fileID: 2819659642628792150, guid: 29159b24bb206844ba3232a515d22601, type: 3}
+  - {fileID: 5884353697183015294, guid: 895a0e32154bafd4eb71fc89056e9df4, type: 3}
+  - {fileID: 6373991191197538190, guid: 759fc0eacae717e459095df901f47ea7, type: 3}
+  - {fileID: 8051294512229585048, guid: add754e70205a07448fd28b6af7426c6, type: 3}
+  - {fileID: 6863043388386344909, guid: edba4dd75abe18b478a71f97f91f4924, type: 3}
+  - {fileID: 584360084154864701, guid: 67e5ffb67993b1f49abc5138165946e5, type: 3}
+  - {fileID: 6951327676379426728, guid: 4447c560a6d536a4ebf13a4a5d277225, type: 3}
+  - {fileID: 4939996729549448692, guid: 02d9b23c02ca094449310e00349094dd, type: 3}
   tableDistX: 1.6
   tableDistY: -2.4
   tableNumX: 7
