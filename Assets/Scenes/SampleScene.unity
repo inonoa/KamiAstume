@@ -674,6 +674,7 @@ MonoBehaviour:
   - {fileID: 584360084154864701, guid: 67e5ffb67993b1f49abc5138165946e5, type: 3}
   - {fileID: 6951327676379426728, guid: 4447c560a6d536a4ebf13a4a5d277225, type: 3}
   - {fileID: 4939996729549448692, guid: 02d9b23c02ca094449310e00349094dd, type: 3}
+  timer: {fileID: 524460966}
   tableDistX: 1.6
   tableDistY: -2.4
   tableNumX: 7

@@ -14,6 +14,8 @@ public class TableManager : MonoBehaviour
     private int kamiSoejiL = 0;
     private int kamiSoejiR = 8000000;
 
+    public Timer timer;
+
 
     public List<List<GameObject>> tables = new List<List<GameObject>>();
     public List<List<Table>> tableStates = new List<List<Table>>();
@@ -44,6 +46,15 @@ public class TableManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(timer.timeF%10==0){
+            System.Random rd = new System.Random();
+            for(int i=0;i<100;i++){
+                int num = rd.Next(tableNumX*tableNumY);
+                if(tableStates[num/tableNumX][num%tableNumX].KamiState==Table.KState.NoKami){
+                    GameObject nxtkami = Instantiate(kamis[rd.Next(kamis.Length)]);
+                    if(tableStates[num/tableNumX][num%tableNumX].TryToPutKami(nxtkami)) break;
+                }
+            }
+        }
     }
 }

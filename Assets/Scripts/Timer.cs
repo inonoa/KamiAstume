@@ -7,7 +7,8 @@ using UnityEngine.SceneManagement;
 public class Timer : MonoBehaviour
 {
     private Text ui;
-    public int timeF = 60 * 60;
+    public int timeF = fullTime;
+    public static readonly int fullTime = 60 * 60;
 
     void TimeUp(){
         SceneManager.LoadScene("ResultScene");

@@ -73,9 +73,9 @@ public class Table : MonoBehaviour
             _KamiState = KState.Coming;
             this._Kami = kami;
             if(transform.position.x>0){
-                kami.transform.position = new Vector3(5,transform.position.y+0.5f,-3);
+                kami.transform.position = new Vector3(5,transform.position.y+0.5f,3);
             }else{
-                kami.transform.position = new Vector3(-5,transform.position.y+0.5f,-3);
+                kami.transform.position = new Vector3(-5,transform.position.y+0.5f,3);
             }
             return true;
         }else{
@@ -114,7 +114,7 @@ public class Table : MonoBehaviour
         //今は罷らむ
         if(KamiState==KState.GettingOut){
             if(transform.position.x>0){
-                Kami.transform.position -= new Vector3(-0.01f,0,0);
+                Kami.transform.position -= new Vector3(-0.05f,0,0);
                 if(Kami.transform.position.x>8){
                     Destroy(Kami);
                     _Kami = null;
@@ -122,7 +122,7 @@ public class Table : MonoBehaviour
                 }
             }
             else{
-                Kami.transform.position -= new Vector3(0.01f,0,0);
+                Kami.transform.position -= new Vector3(0.05f,0,0);
                 if(Kami.transform.position.x<-8){
                     Destroy(Kami);
                     _Kami = null;
@@ -134,19 +134,21 @@ public class Table : MonoBehaviour
         //神がやってくるとこ
         if(KamiState==KState.Coming){
             if(transform.position.x>0){
-                Kami.transform.position += new Vector3(-0.01f,0,0);
+                Kami.transform.position += new Vector3(-0.05f,0,0);
                 if(Kami.transform.position.x<transform.position.x){
                     //座る
-                    Kami.transform.position = new Vector3(transform.position.x,transform.position.y+0.5f,-3);
+                    Kami.transform.position = new Vector3(transform.position.x,transform.position.y+0.5f,3);
                     _KamiState = KState.lackingOfZenzai;
+                    _FramesUntilGetOut = framesToGetOut;
                 }
             }
             else{
-                Kami.transform.position += new Vector3(0.01f,0,0);
+                Kami.transform.position += new Vector3(0.05f,0,0);
                 if(Kami.transform.position.x>transform.position.x){
                     //座る
-                    Kami.transform.position = new Vector3(transform.position.x,transform.position.y+0.5f,-3);
+                    Kami.transform.position = new Vector3(transform.position.x,transform.position.y+0.5f,3);
                     _KamiState = KState.lackingOfZenzai;
+                    _FramesUntilGetOut = framesToGetOut;
                 }
             }
         }
