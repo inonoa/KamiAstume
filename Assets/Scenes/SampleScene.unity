@@ -388,7 +388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a19b397341c75824aa0c361110604745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeF: 600
+  timeF: 3600
 --- !u!1 &873148698
 GameObject:
   m_ObjectHideFlags: 0
@@ -664,6 +664,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   table: {fileID: 3697364933614317124, guid: fca923ce2796eaa46ab353987e31e42e, type: 3}
   zenzai: {fileID: 4395656013431253883, guid: 94d466870864abd468bde3bcbe3c7ad0, type: 3}
+  timer: {fileID: 524460966}
   kamis:
   - {fileID: 4564526777661604400, guid: 5109316939ad58d42987a4c0a2f0597d, type: 3}
   - {fileID: 2819659642628792150, guid: 29159b24bb206844ba3232a515d22601, type: 3}
@@ -674,13 +675,10 @@ MonoBehaviour:
   - {fileID: 584360084154864701, guid: 67e5ffb67993b1f49abc5138165946e5, type: 3}
   - {fileID: 6951327676379426728, guid: 4447c560a6d536a4ebf13a4a5d277225, type: 3}
   - {fileID: 4939996729549448692, guid: 02d9b23c02ca094449310e00349094dd, type: 3}
-  timer: {fileID: 524460966}
-  tableDistX: 1.6
-  tableDistY: -2.4
   tableNumX: 7
   tableNumY: 3
-  firstTableVec: {x: -4.8, y: 2, z: 1}
-  firstZenzaiVec: {x: 0, y: 0, z: 0}
+  tableDistX: 1.6
+  tableDistY: -2.4
 --- !u!4 &2046579195
 Transform:
   m_ObjectHideFlags: 0
