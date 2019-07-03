@@ -106,17 +106,17 @@ public class Table : MonoBehaviour
         }
     }
 
-    ///<summary>神をスポーンさせます。もういる(退出中等を含む)場合はfalseを返す。プレハブを直接渡すのではなくInstantiateして渡す(よくないか)</summary>
+    ///<summary>神をスポーンさせます。もういる(退出中等を含む)またはお椀が残っている場合はfalseを返す。</summary>
     public bool TryToPutKami(GameObject kami){
 
-        //神が出現してないときだけ出る
-        if(KamiState==KState.NoKami){
+        //神が出現してない、かつぜんざいのお椀が残ってないときだけ出る
+        if(KamiState==KState.NoKami && ZenzaiState==ZState.NoZenzai){
 
             KamiState = KState.Coming;
-            this._Kami = kami;
+            this._Kami = Instantiate(kami);
             //机の位置によってどっちからくるか決める
-            if(transform.position.x>0){ kami.transform.position = new Vector3(7,transform.position.y+0.5f,3);}
-            else                      { kami.transform.position = new Vector3(-7,transform.position.y+0.5f,3);}
+            if(transform.position.x>0){ this._Kami.transform.position = new Vector3(7,transform.position.y+0.7f,3);}
+            else                      { this._Kami.transform.position = new Vector3(-7,transform.position.y+0.7f,3);}
 
             return true;
 
@@ -152,7 +152,7 @@ public class Table : MonoBehaviour
                     Kami.transform.position += new Vector3(-0.05f,0,0);
                     //机の前に来たら座る
                     if(transform.position.x>Kami.transform.position.x){
-                        Kami.transform.position = new Vector3(transform.position.x,transform.position.y+0.5f,3);
+                        Kami.transform.position = new Vector3(transform.position.x,transform.position.y+0.7f,3);
                         KamiState = KState.LackingOfZenzai;
                         FramesUntilGetOut = framesToGetOut;
                     }
@@ -162,7 +162,7 @@ public class Table : MonoBehaviour
                     Kami.transform.position += new Vector3(0.05f,0,0);
                     //机の前に来たら座る
                     if(transform.position.x<Kami.transform.position.x){
-                        Kami.transform.position = new Vector3(transform.position.x,transform.position.y+0.5f,3);
+                        Kami.transform.position = new Vector3(transform.position.x,transform.position.y+0.7f,3);
                         KamiState = KState.LackingOfZenzai;
                         FramesUntilGetOut = framesToGetOut;
                     }

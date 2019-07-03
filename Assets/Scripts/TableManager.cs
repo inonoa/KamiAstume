@@ -21,7 +21,7 @@ public class TableManager : MonoBehaviour
     private int kamiSoejiR = 8000000;
 
     //神の出現頻度(の逆数)
-    private int framesToSpawn = 30;
+    public int framesToSpawn = 75;
 
     public int tableNumX = 7;
     public int tableNumY = 3;
@@ -62,16 +62,15 @@ public class TableManager : MonoBehaviour
         if(timer.timeF%framesToSpawn==0){
             System.Random rd = new System.Random();
 
-            //100回ランダムな場所にトライして空きが無かったら諦める
-            for(int i=0;i<100;i++){
-                //机の番号と神をランダム生成
-                int num = rd.Next(tableNumX*tableNumY);
-                GameObject nxtkami = Instantiate(kamis[rd.Next(kamis.Length)]);
+            //机の番号と神をランダム生成
+            int num = rd.Next(tableNumX*tableNumY);
+            GameObject nxtkami = kamis[rd.Next(kamis.Length)];
+            tableStates[num/tableNumX][num%tableNumX].TryToPutKami(nxtkami);
+        }
 
-
-                if(tableStates[num/tableNumX][num%tableNumX].TryToPutKami(nxtkami)) break;
-                else Destroy(nxtkami);
-            }
+        //出現頻度増大
+        if(timer.timeF%100==0){
+            framesToSpawn -= 2;
         }
     }
 }
