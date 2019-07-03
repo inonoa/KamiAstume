@@ -9,8 +9,8 @@ public class OkuniController : MonoBehaviour
     public TableManager tableManager;
 
     //座標(何番目の机前にいるか？)
-    private int x = 0;
-    private int y = 0;
+    public int x = 0;
+    public int y = 0;
 
     //動ける範囲取ってくるだけ
     public int TableNumX{

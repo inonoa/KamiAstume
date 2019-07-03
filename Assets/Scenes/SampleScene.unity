@@ -151,6 +151,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tableManager: {fileID: 2046579194}
+  x: 0
+  y: 0
 --- !u!212 &239314288
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -666,19 +668,49 @@ MonoBehaviour:
   zenzai: {fileID: 4395656013431253883, guid: 94d466870864abd468bde3bcbe3c7ad0, type: 3}
   timer: {fileID: 524460966}
   kamis:
-  - {fileID: 4564526777661604400, guid: 5109316939ad58d42987a4c0a2f0597d, type: 3}
-  - {fileID: 2819659642628792150, guid: 29159b24bb206844ba3232a515d22601, type: 3}
-  - {fileID: 5884353697183015294, guid: 895a0e32154bafd4eb71fc89056e9df4, type: 3}
-  - {fileID: 6373991191197538190, guid: 759fc0eacae717e459095df901f47ea7, type: 3}
-  - {fileID: 8051294512229585048, guid: add754e70205a07448fd28b6af7426c6, type: 3}
-  - {fileID: 6863043388386344909, guid: edba4dd75abe18b478a71f97f91f4924, type: 3}
-  - {fileID: 584360084154864701, guid: 67e5ffb67993b1f49abc5138165946e5, type: 3}
-  - {fileID: 6951327676379426728, guid: 4447c560a6d536a4ebf13a4a5d277225, type: 3}
-  - {fileID: 4939996729549448692, guid: 02d9b23c02ca094449310e00349094dd, type: 3}
+  - {fileID: 590091628546669940, guid: 6bac22314443a1949bdd1945233206a8, type: 3}
+  - {fileID: 5445519043484845369, guid: 4f64cc5358f93ad4f8927397941c311a, type: 3}
+  - {fileID: 40622073967846091, guid: b5c9cdaaa418da94994c285dfc0e55ff, type: 3}
+  - {fileID: 3242329003087666596, guid: c9d19ff50b9b26143a2e479e1ca80145, type: 3}
+  - {fileID: 195132626525936861, guid: 3212a4340f7872940b1a3bf5f5765545, type: 3}
+  - {fileID: 2181446798847531439, guid: 3b45051705ecf8143a5d03faa704aaad, type: 3}
+  - {fileID: 6852597377642844953, guid: 418af8cbb1df536488b0be83c4e2b74b, type: 3}
+  - {fileID: 7487880571674908574, guid: edba4dd75abe18b478a71f97f91f4924, type: 3}
+  - {fileID: 3728549915351311868, guid: a3b1efb5c667f2447bff888c0cfbb73a, type: 3}
+  - {fileID: 3927012798913711973, guid: 59fb07bf6be745b41854a50f5554e4f1, type: 3}
+  - {fileID: 427951617261163162, guid: 6288342975d2da94abe2932a142bee6e, type: 3}
+  - {fileID: 1638490177598065855, guid: 75a9aabfc47327a42b4846396fd1fbf6, type: 3}
+  - {fileID: 1271913838557235381, guid: 3cf74ba6ea2b03749b1ee499292ebe83, type: 3}
+  - {fileID: 3974201698896138263, guid: 2a4e08fac2b56d14babdcb35dfb05fcb, type: 3}
+  - {fileID: 3657749899262667239, guid: 4d0c568ab0072be4cb2ec6bb3a29836e, type: 3}
+  - {fileID: 3221700710035490670, guid: 10ec0c1c9312bc54db67a41fe70c1f71, type: 3}
+  - {fileID: 817247334435438506, guid: 61ea2e00bd4e092418ef4b4c69d65225, type: 3}
+  - {fileID: 8722607404031452449, guid: b0c81cd1c99b06e44b16cfc95e7a7d01, type: 3}
+  - {fileID: 5358984996601729340, guid: 38e52621e20b1414f843773c2ead49a3, type: 3}
+  - {fileID: 8468118273691579187, guid: b5e3ec476c3610f47b70aeee01ae5376, type: 3}
+  - {fileID: 3165080507893927532, guid: 2a3cfa66ec035db4c9f5d1d433270c95, type: 3}
+  - {fileID: 4290482222731770769, guid: ae7d93e4b5d0db649a44ac77e4f12f4f, type: 3}
+  - {fileID: 2991701992946929174, guid: 783db82a547758740816f71be3854ed4, type: 3}
+  - {fileID: 1902656915009950552, guid: 9149dbba6c743104f91659df1ea9532c, type: 3}
+  - {fileID: 4456475018440171149, guid: c4324ffcd47414a4e90d95a6b70b138e, type: 3}
+  - {fileID: 6497762598873319129, guid: 298418de9dc827145b1285c751e90f00, type: 3}
+  - {fileID: 5648300921033309999, guid: 876a8a46354b2f94b9d586fdf704b4af, type: 3}
+  - {fileID: 6999368138058365995, guid: 7a14582c925d7d7408301ab48943361e, type: 3}
+  - {fileID: 6671918804230437045, guid: 52481175d1e46d646b888784d4f81341, type: 3}
+  - {fileID: 1135751444433172696, guid: c2d52cb2bd59bc3449672a5d35af94c5, type: 3}
+  - {fileID: 2029994024068407585, guid: 6ae9663288c61a54f835e416c9605677, type: 3}
+  - {fileID: 7208851006759624039, guid: 16d2f1f7fbfc4f84bb795e5ed3256304, type: 3}
+  - {fileID: 3558315807141332712, guid: 5a6321eb2838ca944b668f560941c867, type: 3}
+  - {fileID: 1294534396506769033, guid: fb091218351f6d24f90ce6460c95d528, type: 3}
+  - {fileID: 7399822889257885819, guid: 35a9aa6fb34b17b4b85a906016ab1084, type: 3}
+  okuni: {fileID: 239314287}
+  kamiSoejiL: -5
+  kamiSoejiR: 10
+  framesToSpawn: 105
   tableNumX: 7
   tableNumY: 3
   tableDistX: 1.6
-  tableDistY: -2.4
+  tableDistY: -1.8
 --- !u!4 &2046579195
 Transform:
   m_ObjectHideFlags: 0
