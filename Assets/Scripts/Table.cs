@@ -106,6 +106,8 @@ public class Table : MonoBehaviour
         //食べてないとき
         if(KamiState==KState.Ate || KamiState==KState.lackingOfZenzai){
             _FramesUntilGetOut --;
+            ScoreHolder.Instance.score += 1;
+            Debug.Log(ScoreHolder.Instance.score);
             if(FramesUntilGetOut==0){
                 _KamiState = KState.GettingOut;
             }

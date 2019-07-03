@@ -41,7 +41,9 @@ public class OkuniController : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Z)){
             Debug.Log(tableManager.tableStates[y][x].KamiState);
             if(tableManager.tableStates[y][x].KamiState==Table.KState.lackingOfZenzai){
-                Debug.Log(tableManager.tableStates[y][x].TryToPutZenzai());
+                if(tableManager.tableStates[y][x].TryToPutZenzai()){
+                    //ScoreHolder.Instance.score += 1000000;
+                }
             }else if(tableManager.tableStates[y][x].KamiState==Table.KState.Ate){
                 tableManager.tableStates[y][x].TryToRemoveZenzai();
             }

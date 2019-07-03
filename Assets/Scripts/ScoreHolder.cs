@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScoreHolder : MonoBehaviour
+public class ScoreHolder
 {
     private ScoreHolder(){}
     private static ScoreHolder _Instance;
@@ -15,17 +15,5 @@ public class ScoreHolder : MonoBehaviour
         }
     }
 
-    public int score = 8000000;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public int score = 0;
 }
