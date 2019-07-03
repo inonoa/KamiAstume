@@ -40,11 +40,11 @@ public class OkuniController : MonoBehaviour
         transform.position += move;
         if(Input.GetKeyDown(KeyCode.Z)){
             Debug.Log(tableManager.tableStates[y][x].KamiState);
-            if(tableManager.tableStates[y][x].KamiState==Table.KState.lackingOfZenzai){
+            if(tableManager.tableStates[y][x].ZenzaiState==Table.ZState.NoZenzai){
                 if(tableManager.tableStates[y][x].TryToPutZenzai()){
                     //ScoreHolder.Instance.score += 1000000;
                 }
-            }else if(tableManager.tableStates[y][x].KamiState==Table.KState.Ate){
+            }else{
                 tableManager.tableStates[y][x].TryToRemoveZenzai();
             }
         }

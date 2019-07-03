@@ -18,6 +18,10 @@ public class Table : MonoBehaviour
             _FramesUntilAteUp = value;
         }
     }
+    public enum ZState{
+        NoZenzai, BeingEaten, WasEaten
+    }
+    public ZState ZenzaiState = ZState.NoZenzai;
     #endregion
 
     #region 神
@@ -31,7 +35,7 @@ public class Table : MonoBehaviour
         }
     }
     public enum KState{
-        NoKami, Coming, lackingOfZenzai, Eating, Ate, GettingOut
+        NoKami, Coming, lackingOfZenzai, Eating, Ate, Leaving
     }
     private KState _KamiState = KState.NoKami;
     public KState KamiState{
@@ -51,6 +55,7 @@ public class Table : MonoBehaviour
     public bool TryToPutZenzai(){
         if(KamiState==KState.lackingOfZenzai){
             _KamiState = KState.Eating;
+            ZenzaiState = ZState.BeingEaten;
             zenzaiObj.SetActive(true);
             zenzaiObj.GetComponent<SpriteRenderer>().sprite = zenzaiSpr;
             _FramesUntilAteUp = framesToEat;
@@ -60,8 +65,9 @@ public class Table : MonoBehaviour
         }
     }
     public bool TryToRemoveZenzai(){
-        if(KamiState==KState.Ate){
-            _KamiState = KState.lackingOfZenzai;
+        if(ZenzaiState==ZState.WasEaten){
+            ZenzaiState = ZState.NoZenzai;
+            if(KamiState==KState.Ate)_KamiState = KState.lackingOfZenzai;
             zenzaiObj.SetActive(false);
             return true;
         }else{
@@ -98,6 +104,7 @@ public class Table : MonoBehaviour
             FramesUntilAteUp --;
             if(FramesUntilAteUp==0){
                 _KamiState = KState.Ate;
+                ZenzaiState = ZState.WasEaten;
                 _FramesUntilGetOut = framesToGetOut;
                 zenzaiObj.GetComponent<SpriteRenderer>().sprite = zenzaiAteSpr;
             }
@@ -109,12 +116,12 @@ public class Table : MonoBehaviour
             ScoreHolder.Instance.score += 1;
             Debug.Log(ScoreHolder.Instance.score);
             if(FramesUntilGetOut==0){
-                _KamiState = KState.GettingOut;
+                _KamiState = KState.Leaving;
             }
         }
 
         //今は罷らむ
-        if(KamiState==KState.GettingOut){
+        if(KamiState==KState.Leaving){
             if(transform.position.x>0){
                 Kami.transform.position -= new Vector3(-0.05f,0,0);
                 if(Kami.transform.position.x>8){
