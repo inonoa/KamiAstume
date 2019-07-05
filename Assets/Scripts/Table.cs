@@ -115,8 +115,8 @@ public class Table : MonoBehaviour
             KamiState = KState.Coming;
             this._Kami = Instantiate(kami);
             //机の位置によってどっちからくるか決める
-            if(transform.position.x>0){ this._Kami.transform.position = new Vector3(7,transform.position.y+0.7f,3);}
-            else                      { this._Kami.transform.position = new Vector3(-7,transform.position.y+0.7f,3);}
+            if(transform.position.x>0){ this._Kami.transform.position = new Vector3(7,transform.position.y+0.7f,2);}
+            else                      { this._Kami.transform.position = new Vector3(-7,transform.position.y+0.7f,2);}
 
             return true;
 
@@ -152,7 +152,7 @@ public class Table : MonoBehaviour
                     Kami.transform.position += new Vector3(-0.05f,0,0);
                     //机の前に来たら座る
                     if(transform.position.x>Kami.transform.position.x){
-                        Kami.transform.position = new Vector3(transform.position.x,transform.position.y+0.7f,3);
+                        Kami.transform.position = new Vector3(transform.position.x,transform.position.y+0.7f,2);
                         KamiState = KState.LackingOfZenzai;
                         FramesUntilGetOut = framesToGetOut;
                     }
@@ -162,7 +162,7 @@ public class Table : MonoBehaviour
                     Kami.transform.position += new Vector3(0.05f,0,0);
                     //机の前に来たら座る
                     if(transform.position.x<Kami.transform.position.x){
-                        Kami.transform.position = new Vector3(transform.position.x,transform.position.y+0.7f,3);
+                        Kami.transform.position = new Vector3(transform.position.x,transform.position.y+0.7f,2);
                         KamiState = KState.LackingOfZenzai;
                         FramesUntilGetOut = framesToGetOut;
                     }

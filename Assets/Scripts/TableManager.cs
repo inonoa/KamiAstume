@@ -36,7 +36,7 @@ public class TableManager : MonoBehaviour
     public float tableDistX = 1.6f;
     public float tableDistY = -1.8f;
     public Vector3 firstTableVec = new Vector3(-4.8f,1.5f,1);
-    public Vector3 firstZenzaiVec = new Vector3(-4.8f,1.5f,0);//
+    public Vector3 firstZenzaiVec = new Vector3(-4.8f,1.5f,0);
 
     #endregion
 
