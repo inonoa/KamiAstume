@@ -23,7 +23,7 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ui.text = "会議終了まで " + (timeF/60).ToString("00") + ":" + (timeF%60).ToString("00");
+        ui.text = "終了まで " + (timeF/60).ToString("00") + ":" + (timeF%60).ToString("00");
         timeF --;
         if(timeF==0){
             TimeUp();

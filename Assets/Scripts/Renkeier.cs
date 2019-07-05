@@ -17,7 +17,9 @@ public class Renkeier : MonoBehaviour
     {
         //Twitter
         if(Input.GetKeyDown(KeyCode.T)){
-            naichilab.UnityRoomTweet.Tweet ("kamiatsume", "(test)KamiAtsumeで8000000柱の神を集めました！", "unity1week","kamiatsume");
+            naichilab.UnityRoomTweet.Tweet ("kamiatsume",
+            "(test)神集めで" + Kanjinizer.Kanjinize(ScoreHolder.Instance.score) + "点を獲得しました！",
+             "unity1week","kamiatsume");
         }
         //オンラインランキング
         if(Input.GetKeyDown(KeyCode.R)){
@@ -26,6 +28,10 @@ public class Renkeier : MonoBehaviour
         //タイトル画面へ
         if(Input.GetKeyDown(KeyCode.X)){
             SceneManager.LoadScene("Title2Intro");
+        }
+        //リトライ
+        if(Input.GetKeyDown(KeyCode.Z)){
+            SceneManager.LoadScene("SampleScene");
         }
     }
 }

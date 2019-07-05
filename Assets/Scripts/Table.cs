@@ -183,6 +183,7 @@ public class Table : MonoBehaviour
 
             //食べてる(一定時間で完食)
             case KState.Eating:
+                ScoreHolder.Instance.score ++;
                 FramesUntilAteUp --;
                 if(FramesUntilAteUp==0){
                     //完食処理
