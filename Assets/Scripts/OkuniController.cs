@@ -32,16 +32,16 @@ public class OkuniController : MonoBehaviour
     {
         #region 移動
         Vector3 move = new Vector3();
-        if(Input.GetKeyDown(KeyCode.RightArrow) && x < TableNumX-1){
+        if((Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D)) && x < TableNumX-1){
             x ++;
             move += new Vector3(tableManager.tableDistX,0);
-        }if(Input.GetKeyDown(KeyCode.LeftArrow) && x > 0){
+        }if((Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A)) && x > 0){
             x --;
             move -= new Vector3(tableManager.tableDistX,0);
-        }if(Input.GetKeyDown(KeyCode.DownArrow) && y < TableNumY-1){
+        }if((Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S)) && y < TableNumY-1){
             y ++;
             move += new Vector3(0,tableManager.tableDistY);
-        }if(Input.GetKeyDown(KeyCode.UpArrow) && y > 0){
+        }if((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) && y > 0){
             y --;
             move -= new Vector3(0,tableManager.tableDistY);
         }
@@ -51,7 +51,7 @@ public class OkuniController : MonoBehaviour
         #region ぜんざいまわり
 
         // ZはZENZAIのZ
-        if(Input.GetKeyDown(KeyCode.Z)){
+        if(Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Return)){
 
             // ぜんざいが無ければぜんざいを置く、そうでなければぜんざいを片付ける
             if(tableManager.tableStates[y][x].ZenzaiState==Table.ZState.NoZenzai)

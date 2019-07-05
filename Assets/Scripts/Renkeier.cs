@@ -26,7 +26,7 @@ public class Renkeier : MonoBehaviour
             naichilab.RankingLoader.Instance.SendScoreAndShowRanking (ScoreHolder.Instance.score);
         }
         //タイトル画面へ
-        if(Input.GetKeyDown(KeyCode.X)){
+        if(Input.GetKeyDown(KeyCode.X) || Input.GetKeyDown(KeyCode.Backspace)){
             ScoreHolder.Instance.score = 0;
             SceneManager.LoadScene("Title2Intro");
         }
