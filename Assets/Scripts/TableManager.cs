@@ -57,9 +57,16 @@ public class TableManager : MonoBehaviour
                 tables[j].Add(Instantiate(table, new Vector3(i*tableDistX,j*tableDistY,0) + firstTableVec, Quaternion.identity));
                 tableStates[j].Add(tables[j][i].GetComponent<Table>());
 
-                tableStates[j][i].fukidashis[0] = Instantiate(fkds[rd.Next(fkds.fkds.Length)],tableStates[j][i].transform);
-                tableStates[j][i].fukidashis[1] = Instantiate(fkds[rd.Next(fkds.fkds.Length)],tableStates[j][i].transform);
-                tableStates[j][i].fukidashis[2] = Instantiate(fkds[rd.Next(fkds.fkds.Length)],tableStates[j][i].transform);
+                for(int k=0;k<3;k++){
+                    //フキダシ生成
+                    tableStates[j][i].fukidashis[k] = Instantiate(
+                        fkds[rd.Next(fkds.fkds.Length)],
+                        new Vector3((k-1)*0.7f, (-(System.Math.Abs(k-1))+5)*0.4f, -2) + tableStates[j][i].transform.position,
+                        Quaternion.identity,
+                        tableStates[j][i].transform);
+
+                    //tableStates[j][i].fukidashis[k].SetActive(false);
+                }
             }
         }
     }
@@ -98,6 +105,8 @@ public class TableManager : MonoBehaviour
             firstZenzaiVec -= new Vector3(0,tableDistY,0);
             okuni.y ++;
 
+            System.Random rd = new System.Random();
+
             tables.Add(new List<GameObject>());
             tableStates.Add(new List<Table>());
             //後ろに一つずつずらすことで先頭に空きを作ってそこに差し込む
@@ -111,7 +120,19 @@ public class TableManager : MonoBehaviour
                 tables[0].Add(Instantiate(table, new Vector3(i*tableDistX+1.75f,0,0) + firstTableVec, Quaternion.identity));
                 tables[0][i].GetComponent<SpriteRenderer>().color = new Color(1,1,1,0);
                 tableStates[0].Add(tables[0][i].GetComponent<Table>());
+
+                for(int k=0;k<3;k++){
+                    //フキダシ生成
+                    tableStates[0][i].fukidashis[k] = Instantiate(
+                        fkds[rd.Next(fkds.fkds.Length)],
+                        new Vector3((k-1)*0.7f, (-(System.Math.Abs(k-1))+5)*0.4f, -2) + tableStates[0][i].transform.position,
+                        Quaternion.identity,
+                        tableStates[0][i].transform);
+
+                    //tableStates[0][i].fukidashis[k].SetActive(false);
+                }
             }
+            
 
             //こっちは後ろに足せばいい
             tables.Add(new List<GameObject>());
@@ -121,6 +142,17 @@ public class TableManager : MonoBehaviour
                     (table, new Vector3(i*tableDistX+1.75f,(tableNumY-1)*tableDistY,0) + firstTableVec, Quaternion.identity));
                 tables[tableNumY-1][i].GetComponent<SpriteRenderer>().color = new Color(1,1,1,0);
                 tableStates[tableNumY-1].Add(tables[tableNumY-1][i].GetComponent<Table>());
+
+                for(int k=0;k<3;k++){
+                    //フキダシ生成
+                    tableStates[tableNumY-1][i].fukidashis[k] = Instantiate(
+                        fkds[rd.Next(fkds.fkds.Length)],
+                        new Vector3((k-1)*0.7f, (-(System.Math.Abs(k-1))+5)*0.4f, -2) + tableStates[tableNumY-1][i].transform.position,
+                        Quaternion.identity,
+                        tableStates[tableNumY-1][i].transform);
+
+                    //tableStates[tableNumY-1][i].fukidashis[k].SetActive(false);
+                }
             }
         }
         #endregion
