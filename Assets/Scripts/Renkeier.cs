@@ -30,7 +30,7 @@ public class Renkeier : MonoBehaviour
             SceneManager.LoadScene("Title2Intro");
         }
         //リトライ
-        if(Input.GetKeyDown(KeyCode.Z)){
+        if(Input.GetKeyDown(KeyCode.C)){
             SceneManager.LoadScene("SampleScene");
         }
     }

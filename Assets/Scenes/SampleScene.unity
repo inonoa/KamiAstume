@@ -307,6 +307,143 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 280923759}
   m_CullTransparentMesh: 0
+--- !u!1 &379555883
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 379555885}
+  - component: {fileID: 379555884}
+  m_Layer: 0
+  m_Name: FukidashiHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &379555884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 379555883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3176a363b4712af48bb268695385bea9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 21300000, guid: b200903d4d36bc04295bbebc63bc203f, type: 3}
+  - {fileID: 21300000, guid: 75852d84d1b2cde4aa6ca5984b49b87e, type: 3}
+  - {fileID: 21300000, guid: 76e2f5d4e19c4d840a58dde8f6f16d34, type: 3}
+  - {fileID: 21300000, guid: a6c6077526685bd4fa7064b03fdc3d86, type: 3}
+  - {fileID: 21300000, guid: 8f09ef8e28c4be34d8a70f8b4cadf6f7, type: 3}
+  - {fileID: 21300000, guid: 239ae39dd92cc7f41bf90ea9069f5563, type: 3}
+  - {fileID: 21300000, guid: 78a1dafb2afcff548806668765b2a81f, type: 3}
+  - {fileID: 21300000, guid: bdf7bfc9014a0e941b71e277a657b4c3, type: 3}
+  - {fileID: 21300000, guid: ff138ad9c1dc7ac4292d66a63e8a14fb, type: 3}
+  - {fileID: 21300000, guid: fc2f6afe215c8b445a969fe6b447e7ae, type: 3}
+  - {fileID: 21300000, guid: 73798c4dbfd9a4148be733d90cba49b0, type: 3}
+  - {fileID: 21300000, guid: ed250d227e979a644b706f13f3fad271, type: 3}
+  - {fileID: 21300000, guid: 917498dfe79bf8d42b4b2a63a5b8f250, type: 3}
+  - {fileID: 21300000, guid: 7876bf6569fce704c8ca2569b8145d12, type: 3}
+--- !u!4 &379555885
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 379555883}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 191.28325, y: 166.55528, z: -43.677944}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &429099376
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 429099377}
+  - component: {fileID: 429099379}
+  - component: {fileID: 429099378}
+  m_Layer: 5
+  m_Name: Tsuika
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &429099377
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 429099376}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 873148702}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 290, y: -275}
+  m_SizeDelta: {x: 300, y: 60}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &429099378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 429099376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.8301887, g: 0.5093871, b: 0.14489143, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 0be9235b3104af3478767b052ffa1c24, type: 3}
+    m_FontSize: 50
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 5
+    m_MaxSize: 50
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "\u5EA7\u5E2D\u8FFD\u52A0!!!"
+--- !u!222 &429099379
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 429099376}
+  m_CullTransparentMesh: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -482,7 +619,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a19b397341c75824aa0c361110604745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeF: 600
+  timeF: 3600
 --- !u!1 &873148698
 GameObject:
   m_ObjectHideFlags: 0
@@ -495,6 +632,7 @@ GameObject:
   - component: {fileID: 873148701}
   - component: {fileID: 873148700}
   - component: {fileID: 873148699}
+  - component: {fileID: 873148703}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -575,6 +713,7 @@ RectTransform:
   m_Children:
   - {fileID: 524460963}
   - {fileID: 280923760}
+  - {fileID: 429099377}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -583,6 +722,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &873148703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 873148698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d16500a3322f9314b90880675d991ac5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: {fileID: 524460966}
+  tsuika: {fileID: 429099376}
 --- !u!1 &947435822
 GameObject:
   m_ObjectHideFlags: 0

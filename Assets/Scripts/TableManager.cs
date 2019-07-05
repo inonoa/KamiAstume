@@ -35,8 +35,8 @@ public class TableManager : MonoBehaviour
     #region 定数
     public float tableDistX = 1.6f;
     public float tableDistY = -1.8f;
-    public static Vector3 firstTableVec = new Vector3(-4.8f,1.5f,1);
-    public static Vector3 firstZenzaiVec = firstTableVec + new Vector3(0,0,-1);
+    public Vector3 firstTableVec = new Vector3(-4.8f,1.5f,1);
+    public Vector3 firstZenzaiVec = new Vector3(-4.8f,1.5f,0);//
 
     #endregion
 
@@ -67,8 +67,7 @@ public class TableManager : MonoBehaviour
             //机の番号と神をランダム生成
             int num = rd.Next(tableNumX*tableNumY);
             GameObject nxtkami = kamis[rd.Next(System.Math.Max(kamiSoejiL,0),kamiSoejiR)];
-            Debug.Log(tableStates[num/tableNumX][num%tableNumX].TryToPutKami(nxtkami));
-            Debug.Log(num);
+            tableStates[num/tableNumX][num%tableNumX].TryToPutKami(nxtkami);
         }
 
         //出現頻度増大
@@ -102,7 +101,8 @@ public class TableManager : MonoBehaviour
             tables[0] = new List<GameObject>();
             tableStates[0] = new List<Table>();
             for(int i=0;i<tableNumX;i++){
-                tables[0].Add(Instantiate(table, new Vector3(i*tableDistX,0,0) + firstTableVec, Quaternion.identity));
+                tables[0].Add(Instantiate(table, new Vector3(i*tableDistX+1.75f,0,0) + firstTableVec, Quaternion.identity));
+                tables[0][i].GetComponent<SpriteRenderer>().color = new Color(1,1,1,0);
                 tableStates[0].Add(tables[0][i].GetComponent<Table>());
             }
 
@@ -110,10 +110,21 @@ public class TableManager : MonoBehaviour
             tables.Add(new List<GameObject>());
             tableStates.Add(new List<Table>());
             for(int i=0;i<tableNumX;i++){
-                tables[tableNumY-1].Add(Instantiate(table, new Vector3(i*tableDistX,(tableNumY-1)*tableDistY,0) + firstTableVec, Quaternion.identity));
+                tables[tableNumY-1].Add(Instantiate
+                    (table, new Vector3(i*tableDistX+1.75f,(tableNumY-1)*tableDistY,0) + firstTableVec, Quaternion.identity));
+                tables[tableNumY-1][i].GetComponent<SpriteRenderer>().color = new Color(1,1,1,0);
                 tableStates[tableNumY-1].Add(tables[tableNumY-1][i].GetComponent<Table>());
             }
         }
         #endregion
+
+        if(timer.timeF<1200 && timer.timeF>1149){
+            for(int i=0;i<tableNumX;i++){
+                tables[tableNumY-1][i].GetComponent<SpriteRenderer>().color += new Color(0,0,0,0.02f);
+                tables[0][i].GetComponent<SpriteRenderer>().color += new Color(0,0,0,0.02f);
+                tables[tableNumY-1][i].transform.position += new Vector3((1149-timer.timeF)*0.00133f,0,0);
+                tables[0][i].transform.position += new Vector3((1149-timer.timeF)*0.00133f,0,0);
+            }
+        }
     }
 }
