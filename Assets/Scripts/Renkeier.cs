@@ -27,10 +27,12 @@ public class Renkeier : MonoBehaviour
         }
         //タイトル画面へ
         if(Input.GetKeyDown(KeyCode.X)){
+            ScoreHolder.Instance.score = 0;
             SceneManager.LoadScene("Title2Intro");
         }
         //リトライ
         if(Input.GetKeyDown(KeyCode.C)){
+            ScoreHolder.Instance.score = 0;
             SceneManager.LoadScene("SampleScene");
         }
     }

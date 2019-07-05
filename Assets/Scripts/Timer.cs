@@ -23,7 +23,7 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ui.text = "終了まで " + (timeF/60).ToString("00") + ":" + (timeF%60).ToString("00");
+        ui.text = "時間: " + Kanjinizer.Kanjinize(timeF/60,2) + ":" + Kanjinizer.Kanjinize(timeF%60,2);
         timeF --;
         if(timeF==0){
             TimeUp();
