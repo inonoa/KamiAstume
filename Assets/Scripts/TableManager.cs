@@ -8,6 +8,7 @@ public class TableManager : MonoBehaviour
     public GameObject table;
     public GameObject zenzai;
     public Timer timer;
+    public Fukidashi fkds;
 
     //神の候補全部乗せ(ある時点で出るのはこの中の限定された範囲内)
     public GameObject[] kamis;
@@ -45,6 +46,8 @@ public class TableManager : MonoBehaviour
     {
         zenzai = table.transform.Find( "Zenzai" ).gameObject;
 
+        System.Random rd = new System.Random();
+
         //机生成
         for(int j=0;j<tableNumY;j++){
             tables.Add(new List<GameObject>());
@@ -53,6 +56,10 @@ public class TableManager : MonoBehaviour
             for(int i=0;i<tableNumX;i++){
                 tables[j].Add(Instantiate(table, new Vector3(i*tableDistX,j*tableDistY,0) + firstTableVec, Quaternion.identity));
                 tableStates[j].Add(tables[j][i].GetComponent<Table>());
+
+                tableStates[j][i].fukidashis[0] = Instantiate(fkds[rd.Next(fkds.fkds.Length)],tableStates[j][i].transform);
+                tableStates[j][i].fukidashis[1] = Instantiate(fkds[rd.Next(fkds.fkds.Length)],tableStates[j][i].transform);
+                tableStates[j][i].fukidashis[2] = Instantiate(fkds[rd.Next(fkds.fkds.Length)],tableStates[j][i].transform);
             }
         }
     }

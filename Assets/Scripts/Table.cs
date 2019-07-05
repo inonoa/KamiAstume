@@ -62,6 +62,8 @@ public class Table : MonoBehaviour
 
     #endregion
 
+    public GameObject[] fukidashis = new GameObject[3];
+
     #region 外部からの書き換え関数群
 
     ///<summary>ぜんざいを机に置く。神が着席していない/ぜんざいが既にある場合はfalseを返します</summary>

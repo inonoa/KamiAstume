@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class Fukidashi : MonoBehaviour
 {
-    public Sprite[] sprites;
+    public GameObject[] fkds;
+
+    public GameObject this[int i]{
+        get{ return fkds[i]; }
+    }
 
     // Start is called before the first frame update
     void Start()
