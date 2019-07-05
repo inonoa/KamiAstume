@@ -18,12 +18,12 @@ public class Title2IntroSwitcher : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Z)){
+        if(Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Return)){
             if(page==0){
                 TitleObj.SetActive(false);
                 intros[0].SetActive(true);
                 page ++;
-            }else if(page<introPageNum-1){
+            }else if(page<introPageNum){
                 intros[page-1].SetActive(false);
                 intros[page].SetActive(true);
                 page ++;
