@@ -31,5 +31,16 @@ public class Title2IntroSwitcher : MonoBehaviour
                 SceneManager.LoadScene("SampleScene");
             }
         }
+        if(Input.GetKeyDown(KeyCode.X) || Input.GetKeyDown(KeyCode.Backspace)){
+            if(page>1){
+                intros[page-1].SetActive(false);
+                intros[page-2].SetActive(true);
+                page --;
+            }else if(page==1){
+                intros[0].SetActive(false);
+                TitleObj.SetActive(true);
+                page --;
+            }
+        }
     }
 }
