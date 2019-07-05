@@ -913,7 +913,7 @@ MonoBehaviour:
   table: {fileID: 3697364933614317124, guid: fca923ce2796eaa46ab353987e31e42e, type: 3}
   zenzai: {fileID: 4395656013431253883, guid: 94d466870864abd468bde3bcbe3c7ad0, type: 3}
   timer: {fileID: 524460966}
-  fkds: {fileID: 0}
+  fkds: {fileID: 379555884}
   kamis:
   - {fileID: 590091628546669940, guid: 6bac22314443a1949bdd1945233206a8, type: 3}
   - {fileID: 5445519043484845369, guid: 4f64cc5358f93ad4f8927397941c311a, type: 3}

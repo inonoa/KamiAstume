@@ -61,11 +61,13 @@ public class TableManager : MonoBehaviour
                     //フキダシ生成
                     tableStates[j][i].fukidashis[k] = Instantiate(
                         fkds[rd.Next(fkds.fkds.Length)],
-                        new Vector3((k-1)*0.7f, (-(System.Math.Abs(k-1))+5)*0.4f, -2) + tableStates[j][i].transform.position,
+                        new Vector3((k-1)*0.7f, (-(System.Math.Abs(k-1))+3)*0.4f, -2) + tableStates[j][i].transform.position,
                         Quaternion.identity,
                         tableStates[j][i].transform);
+                    
+                    tableStates[j][i].fukidashis[k].GetComponent<SpriteRenderer>().color = new Color(1,1,1,0);
 
-                    //tableStates[j][i].fukidashis[k].SetActive(false);
+                    tableStates[j][i].fukidashis[k].SetActive(false);
                 }
             }
         }
@@ -125,11 +127,13 @@ public class TableManager : MonoBehaviour
                     //フキダシ生成
                     tableStates[0][i].fukidashis[k] = Instantiate(
                         fkds[rd.Next(fkds.fkds.Length)],
-                        new Vector3((k-1)*0.7f, (-(System.Math.Abs(k-1))+5)*0.4f, -2) + tableStates[0][i].transform.position,
+                        new Vector3((k-1)*0.7f, (-(System.Math.Abs(k-1))+3)*0.4f, -2) + tableStates[0][i].transform.position,
                         Quaternion.identity,
                         tableStates[0][i].transform);
 
-                    //tableStates[0][i].fukidashis[k].SetActive(false);
+                    tableStates[0][i].fukidashis[k].GetComponent<SpriteRenderer>().color = new Color(1,1,1,0);
+
+                    tableStates[0][i].fukidashis[k].SetActive(false);
                 }
             }
             
@@ -147,11 +151,13 @@ public class TableManager : MonoBehaviour
                     //フキダシ生成
                     tableStates[tableNumY-1][i].fukidashis[k] = Instantiate(
                         fkds[rd.Next(fkds.fkds.Length)],
-                        new Vector3((k-1)*0.7f, (-(System.Math.Abs(k-1))+5)*0.4f, -2) + tableStates[tableNumY-1][i].transform.position,
+                        new Vector3((k-1)*0.7f, (-(System.Math.Abs(k-1))+3)*0.4f, -2) + tableStates[tableNumY-1][i].transform.position,
                         Quaternion.identity,
                         tableStates[tableNumY-1][i].transform);
+                    
+                    tableStates[tableNumY-1][i].fukidashis[k].GetComponent<SpriteRenderer>().color = new Color(1,1,1,0);
 
-                    //tableStates[tableNumY-1][i].fukidashis[k].SetActive(false);
+                    tableStates[tableNumY-1][i].fukidashis[k].SetActive(false);
                 }
             }
         }

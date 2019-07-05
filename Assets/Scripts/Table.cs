@@ -80,6 +80,14 @@ public class Table : MonoBehaviour
 
             _FramesUntilAteUp = framesToEat;
 
+            for(int k=0;k<2;k++){
+                fukidashis[k].SetActive(false);
+                fukidashis[k].transform.position = new Vector3((k-1)*0.7f, (-(System.Math.Abs(k-1))+3)*0.4f, -2)
+                                                           + transform.position;
+                fukidashis[k].GetComponent<SpriteRenderer>().color = new Color(1,1,1,0);
+            }
+            fukidashis[2].SetActive(true);
+
             return true;
 
         }else{
@@ -139,6 +147,13 @@ public class Table : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        for(int i=0;i<3;i++){
+            if(fukidashis[i].activeSelf && fukidashis[i].transform.localPosition.y < (-(System.Math.Abs(i-1))+5)*0.4f ){
+                fukidashis[i].transform.position += new Vector3(0,0.02f,0);
+                fukidashis[i].GetComponent<SpriteRenderer>().color += new Color(0,0,0,0.03f);
+            }
+        }
+
         switch(KamiState){
 
             //神が来るまで何もしない
@@ -157,6 +172,8 @@ public class Table : MonoBehaviour
                         Kami.transform.position = new Vector3(transform.position.x,transform.position.y+0.7f,2);
                         KamiState = KState.LackingOfZenzai;
                         FramesUntilGetOut = framesToGetOut;
+
+                        fukidashis[0].SetActive(true);
                     }
                 }
                 //左側の机の場合左から右に移動
@@ -167,6 +184,8 @@ public class Table : MonoBehaviour
                         Kami.transform.position = new Vector3(transform.position.x,transform.position.y+0.7f,2);
                         KamiState = KState.LackingOfZenzai;
                         FramesUntilGetOut = framesToGetOut;
+
+                        fukidashis[0].SetActive(true);
                     }
                 }
 
@@ -179,6 +198,17 @@ public class Table : MonoBehaviour
                 FramesUntilGetOut --;
                 if(FramesUntilGetOut==0){
                     KamiState = KState.Leaving;
+
+                    for(int k=0;k<3;k++){
+                        fukidashis[k].transform.position = new Vector3((k-1)*0.7f, (-(System.Math.Abs(k-1))+3)*0.4f, -2)
+                                                           + transform.position;
+                        fukidashis[k].GetComponent<SpriteRenderer>().color = new Color(1,1,1,0);
+                        fukidashis[k].SetActive(false);
+                    }
+
+                }else if(FramesUntilGetOut==100){
+                    fukidashis[1].SetActive(true);
+                    fukidashis[2].SetActive(true);
                 }
 
                 break;
@@ -193,6 +223,8 @@ public class Table : MonoBehaviour
                     ZenzaiState = ZState.WasEaten;
                     FramesUntilGetOut = framesToGetOut;
                     zenzaiObj.GetComponent<SpriteRenderer>().sprite = zenzaiAteSpr;
+
+                    fukidashis[0].SetActive(true);
                 }
                 break;
 
@@ -203,6 +235,17 @@ public class Table : MonoBehaviour
                 FramesUntilGetOut --;
                 if(FramesUntilGetOut==0){
                     KamiState = KState.Leaving;
+
+                    for(int k=0;k<3;k++){
+                        fukidashis[k].transform.position = new Vector3((k-1)*0.7f, (-(System.Math.Abs(k-1))+3)*0.4f, -2)
+                                                           + transform.position;
+                        fukidashis[k].GetComponent<SpriteRenderer>().color = new Color(1,1,1,0);
+                        fukidashis[k].SetActive(false);
+                    }
+
+                }else if(FramesUntilGetOut==100){
+                    fukidashis[1].SetActive(true);
+                    fukidashis[2].SetActive(true);
                 }
 
                 break;
