@@ -37,6 +37,11 @@ public class Table : MonoBehaviour
     ///<summary>ぜんざいの状態(神の状態はKamiState)</summary>
     public ZState ZenzaiState = ZState.NoZenzai;
 
+    public AudioClip putSE;
+    public AudioClip takeSE;
+
+    AudioSource audioSource;
+
     #endregion
 
     #region 神
@@ -87,6 +92,8 @@ public class Table : MonoBehaviour
                 fukidashis[k].GetComponent<SpriteRenderer>().color = new Color(1,1,1,0);
             }
             fukidashis[2].SetActive(true);
+            
+            audioSource.PlayOneShot(putSE);
 
             return true;
 
@@ -108,6 +115,8 @@ public class Table : MonoBehaviour
 
             //Ate<->lackingOfZenzai間だけはぜんざいの有無によるので…
             if(KamiState==KState.Ate) KamiState = KState.LackingOfZenzai;
+
+            audioSource.PlayOneShot(takeSE);
 
             return true;
 
@@ -141,7 +150,7 @@ public class Table : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
