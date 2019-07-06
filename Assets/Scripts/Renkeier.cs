@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class Renkeier : MonoBehaviour
 {
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +30,7 @@ public class Renkeier : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.X) || Input.GetKeyDown(KeyCode.Backspace)){
             ScoreHolder.Instance.score = 0;
             SceneManager.LoadScene("Title2Intro");
+            Destroy(GameObject.Find("BGMer"));
         }
         //リトライ
         if(Input.GetKeyDown(KeyCode.C)){
