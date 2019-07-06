@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RankingInfo
   m_EditorClassIdentifier: 
   BoardName: "\u795E"
-  ClassName: Kami
+  ClassName: KamiAtsume
   Type: 0
   Order: 1
   CustomFormat: 
