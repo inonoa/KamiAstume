@@ -19,7 +19,7 @@ public class Renkeier : MonoBehaviour
         //Twitter
         if(Input.GetKeyDown(KeyCode.T)){
             naichilab.UnityRoomTweet.Tweet ("kamiatsume",
-            "(test)神集めで" + Kanjinizer.Kanjinize(ScoreHolder.Instance.score) + "点を獲得しました！",
+            "神集めで" + Kanjinizer.Kanjinize(ScoreHolder.Instance.score) + "点を獲得しました！",
              "unity1week","kamiatsume");
         }
         //オンラインランキング
