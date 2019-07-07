@@ -65,5 +65,11 @@ public class OkuniController : MonoBehaviour
         }
         #endregion
 
+        if(Input.GetKeyDown(KeyCode.S))
+{
+   ScreenCapture.CaptureScreenshot("image.png");
+   Debug.Log("screenshot");
+}
+
     }
 }

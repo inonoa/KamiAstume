@@ -26,6 +26,8 @@ namespace naichilab
         /// </summary>
         [NonSerialized] public IScore LastScore;
 
+        public Renkeier renkei;
+
         #region singleton
 
         private static RankingLoader instance;
@@ -79,6 +81,8 @@ namespace naichilab
             var board = RankingBoards.GetRankingInfo(boardId);
             var sc = new NumberScore(score, board.CustomFormat);
             SendScoreAndShowRanking(sc, board);
+
+            renkei.inRanking = true;
         }
 
         private void SendScoreAndShowRanking(IScore score, RankingInfo board)

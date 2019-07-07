@@ -13,6 +13,8 @@ namespace naichilab
         private const string COLUMN_SCORE = "score";
         private const string COLUMN_NAME = "name";
 
+        public Renkeier renkei;
+
 
         [SerializeField] Text captionLabel;
         [SerializeField] Text scoreLabel;
@@ -73,6 +75,8 @@ namespace naichilab
             _lastScore = RankingLoader.Instance.LastScore;
 
             Debug.Log(BoardIdPlayerPrefsKey + "=" + PlayerPrefs.GetString(BoardIdPlayerPrefsKey, null));
+
+            renkei = GameObject.Find("Renkeier").GetComponent<Renkeier>();
 
             StartCoroutine(GetHighScoreAndRankingBoard());
         }
@@ -237,6 +241,7 @@ namespace naichilab
         public void OnCloseButtonClick()
         {
             closeButton.interactable = false;
+            renkei.inRanking = false;
             UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync("Ranking");
         }
 
